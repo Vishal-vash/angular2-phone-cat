@@ -1,0 +1,33 @@
+.card-img-top{
+    width: 60%;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.card-block{
+    border-top: 1px solid #ccc;
+}
+
+p.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+p.card-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.row{
+    margin-bottom: 30px;
+}
+
+.card-footer:last-child{
+    border-radius: 0
+}

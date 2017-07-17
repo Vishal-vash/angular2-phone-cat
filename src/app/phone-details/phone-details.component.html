@@ -1,0 +1,170 @@
+<div class="phoneDetails" *ngIf="selectedPhone">
+  <div class="row">
+    <div class="col-8">
+      <h2>{{selectedPhone.name}}</h2>
+      <hr />
+      <p>{{selectedPhone.description}}</p>
+      <div class="allImages row">
+        <div class="thumbnail col-2" *ngFor="let image of selectedPhone.images">
+          <img [src]="image" (click)="selectImage(image)" />
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <img [src]="selectedImage">
+    </div>
+  </div>
+  <div class="card-group">
+    <div class="card">
+      <h4 class="card-title">Availability and Networks</h4>
+      <div class="card-block">
+        <p class="card-text text-warning" *ngIf="isAvailabality; else default1">{{selectedPhone.availability}}</p>
+        <ng-template #default1>
+          <p class="text-warning">Availability</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Battery</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">Type</h6>
+          <p class="col-6">{{selectedPhone.battery.type}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Talktime</h6>
+          <p class="col-6">{{selectedPhone.battery.talktime}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Standby time (max)</h6>
+          <p class="col-6">{{selectedPhone.battery.standbyTime}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Storage and Memory</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">RAM</h6>
+          <p class="col-6">{{selectedPhone.storage.ram}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Internal Storage</h6>
+          <p class="col-6">{{selectedPhone.storage.flash}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Connectivity</h4>
+      <div class="card-block">
+        <h6 class="text-warning">Network Support </h6>
+        <div class="row">
+          <h6 class="col-6 text-warning">WiFi</h6>
+          <p class="col-6">{{selectedPhone.connectivity.wifi}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Bluetooth</h6>
+          <p class="col-6">{{selectedPhone.connectivity.bluetooth}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Infrared</h6>
+          <p class="col-6">{{selectedPhone.connectivity.infrared | checkMark}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">GPS</h6>
+          <p class="col-6">{{selectedPhone.connectivity.gps | checkMark}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Android</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">OS Version</h6>
+          <p class="col-6">{{selectedPhone.android.os}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">UI</h6>
+          <p class="col-6">{{selectedPhone.android.ui}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-group">
+    <div class="card">
+      <h4 class="card-title">Size and Weight</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">Dimensions</h6>
+          <p class="col-6">{{selectedPhone.sizeAndWeight.dimensions}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Weight</h6>
+          <p class="col-6">{{selectedPhone.sizeAndWeight.weight}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Display</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">Screen Size</h6>
+          <p class="col-6">{{selectedPhone.display.screenResolution}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Screen Resolution</h6>
+          <p class="col-6">{{selectedPhone.display.screenSize}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Touch Screen</h6>
+          <p class="col-6">{{selectedPhone.display.touchScreen | checkMark}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title">Hardware</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">CPU</h6>
+          <p class="col-6">{{selectedPhone.hardware.cpu}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">USB</h6>
+          <p class="col-6">{{selectedPhone.hardware.usb}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Audio/Headphone Jack</h6>
+          <p class="col-6">{{selectedPhone.hardware.audioJack}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">FM Radio</h6>
+          <p class="col-6">{{selectedPhone.hardware.fmRadio | checkMark}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Accelerometer</h6>
+          <p class="col-6">{{selectedPhone.hardware.accelerometer | checkMark}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Camera</h4>
+      <div class="card-block">
+        <div class="row">
+          <h6 class="col-6 text-warning">Primary</h6>
+          <p class="col-6">{{selectedPhone.camera.primary}}</p>
+        </div>
+        <div class="row">
+          <h6 class="col-6 text-warning">Features</h6>
+          <p class="col-6">{{selectedPhone.camera.features}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Additional Features</h4>
+      <div class="card-block">
+        <p>{{selectedPhone.additionalFeatures}}</p>
+      </div>
+    </div>
+  </div>
+</div>

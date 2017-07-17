@@ -1,0 +1,14 @@
+<div class="row" *ngFor="let row of arrayPhones; let i=index">
+  <div class="col-3" *ngFor="let phone of row">
+    <div class="card">
+      <img class="card-img-top" [src]="phone.imageUrl" alt="Card image cap" [routerLink]="['/details', phone.id]">
+      <div class="card-block">
+        <p class="card-title text-primary">{{phone.name}}</p>
+        <p class="card-text">{{phone.snippet}}</p>
+      </div>
+      <div class="card-footer text-center">
+        <a class="btn btn-primary" [routerLink]="['/details', phone.id]">See Details</a>
+      </div>
+    </div>
+  </div>
+</div>

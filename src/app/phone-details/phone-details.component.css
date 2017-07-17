@@ -1,0 +1,35 @@
+.phoneDetails{
+    margin-bottom: 50px;
+}
+
+.btn,h2{
+    margin-top: 30px;
+}
+
+img{
+    width: 95%;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+h4{
+    font-size: 1rem;
+    color: #fff;
+    border: 1px solid #0275d8;
+    background: #0275d8;
+    padding: 15px 10px;
+}
+
+.card-block{
+    padding: 10px;
+}
+
+.card-block p,
+.card-block h6{
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.allImages {
+    margin-bottom: 30px;
+}
